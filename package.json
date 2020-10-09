@@ -1,0 +1,29 @@
+{
+  "name": "color-handler",
+  "version": "1.0.0",
+  "description": "A",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasJJ/Color-handler.git"
+  },
+  "keywords": [
+    "color",
+    "colors",
+    "react",
+    "vue",
+    "javascript"
+  ],
+  "author": "Andreasjj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreasJJ/Color-handler/issues"
+  },
+  "homepage": "https://github.com/AndreasJJ/Color-handler#readme",
+  "dependencies": {
+    "typescript": "^4.0.3"
+  }
+}
