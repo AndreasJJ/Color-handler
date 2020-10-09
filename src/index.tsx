@@ -1,8 +1,3 @@
-import rgba2rgb, {rgba2rgbString, rgba2rgbObjekt, rgba2rgbArray} from './rgbaToRgb';
+import rgba2rgb, { rgba2rgbString, rgba2rgbObjekt, rgba2rgbArray } from './rgba2rgb';
 
-export {
-  rgba2rgb,
-  rgba2rgbString,
-  rgba2rgbObjekt,
-  rgba2rgbArray
-};
+export { rgba2rgb, rgba2rgbString, rgba2rgbObjekt, rgba2rgbArray };
