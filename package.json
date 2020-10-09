@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndreasJJ/Color-handler.git"
+    "url": "git+https://github.com/AndreasJJ/Lumino.git"
   },
   "keywords": [
     "color",
@@ -28,9 +28,9 @@
   "author": "Andreasjj",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AndreasJJ/Color-handler/issues"
+    "url": "https://github.com/AndreasJJ/Lumino/issues"
   },
-  "homepage": "https://github.com/AndreasJJ/Color-handler#readme",
+  "homepage": "https://github.com/AndreasJJ/Lumino#readme",
   "publishConfig": {
     "access": "public"
   },
