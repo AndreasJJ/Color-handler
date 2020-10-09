@@ -27,13 +27,13 @@ function rgba2rgb(input: Input, background: Background = { r: 255, g: 255, b: 25
             return rgba2rgbString(input, background);
         }
         case OutputType.OBJECT: {
-            return rgba2rgbObjekt(input, background);
+            return rgba2rgbObject(input, background);
         }
         case OutputType.ARRAY: {
             return rgba2rgbArray(input, background);
         }
         default: {
-            return rgba2rgbObjekt(input, background);
+            return rgba2rgbObject(input, background);
         }
     }
 }
@@ -43,7 +43,7 @@ function rgba2rgbString(input: Input, background: Background = { r: 255, g: 255,
     return `rgb(${output.r}, ${output.g}, ${output.b})`;
 }
 
-function rgba2rgbObjekt(input: Input, background: Background = { r: 255, g: 255, b: 255 }): RGB {
+function rgba2rgbObject(input: Input, background: Background = { r: 255, g: 255, b: 255 }): RGB {
     return _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
 }
 
@@ -159,4 +159,4 @@ function _rgba2rgb(value: RGBA, background: RGB): RGB {
 }
 
 export default rgba2rgb;
-export { rgba2rgbString, rgba2rgbObjekt, rgba2rgbArray };
+export { rgba2rgbString, rgba2rgbObject, rgba2rgbArray };
