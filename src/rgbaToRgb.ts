@@ -1,7 +1,7 @@
 enum OutputType {
-    STRING = "string",
-    OBJECT = "object",
-    ARRAY = "array",
+    STRING = 'string',
+    OBJECT = 'object',
+    ARRAY = 'array',
 }
 
 interface RGBA {
@@ -17,12 +17,12 @@ interface RGB {
     b: number;
 }
 
-type Input = string | RGBA | [number, number, number, number];
-type Output = string | RGB | [number, number, number];
+type Input = string | RGBA | [number, number, number, number];
+type Output = string | RGB | [number, number, number];
 type Background = Output;
 
-function rgba2rgb(input: Input, background: Background = {r: 255, g: 255, b: 255}, output?: OutputType): Output  {
-    switch(output) {
+function rgba2rgb(input: Input, background: Background = { r: 255, g: 255, b: 255 }, output?: OutputType): Output {
+    switch (output) {
         case OutputType.STRING: {
             return rgba2rgbString(input, background);
         }
@@ -36,21 +36,21 @@ function rgba2rgb(input: Input, background: Background = {r: 255, g: 255, b: 255
             return rgba2rgbObjekt(input, background);
         }
     }
-};
+}
 
-function rgba2rgbString(input: Input, background: Background = {r: 255, g: 255, b: 255}): string {
+function rgba2rgbString(input: Input, background: Background = { r: 255, g: 255, b: 255 }): string {
     const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
     return `rgb(${output.r}, ${output.g}, ${output.b})`;
-};
+}
 
-function rgba2rgbObjekt(input: Input, background: Background = {r: 255, g: 255, b: 255}): RGB {
+function rgba2rgbObjekt(input: Input, background: Background = { r: 255, g: 255, b: 255 }): RGB {
     return _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
-};
+}
 
-function rgba2rgbArray(input: Input, background: Background = {r: 255, g: 255, b: 255}): [number, number, number] {
+function rgba2rgbArray(input: Input, background: Background = { r: 255, g: 255, b: 255 }): [number, number, number] {
     const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
     return [output.r, output.g, output.b];
-};
+}
 
 function parseInput2RGBA(input: Input): RGBA {
     let parsed: RGBA;
@@ -68,7 +68,7 @@ function parseInput2RGBA(input: Input): RGBA {
                 a: _arrNums[3],
             };
         } catch {
-            throw new Error("Unable to parse input string");
+            throw new Error('Unable to parse input string');
         }
     } else if (Array.isArray(input)) {
         parsed = {
@@ -80,13 +80,13 @@ function parseInput2RGBA(input: Input): RGBA {
     } else if (typeof input === 'object' && input !== null) {
         parsed = input as RGBA;
     } else {
-        throw new Error("Unsuppored input type");
+        throw new Error('Unsuppored input type');
     }
     if (!isValidRGBA(parsed.r, parsed.g, parsed.b, parsed.a)) {
-        throw new Error("RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.");
+        throw new Error('RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.');
     }
     return parsed;
-};
+}
 
 function parseInput2RGB(background: Background): RGB {
     let parsed: RGB;
@@ -103,7 +103,7 @@ function parseInput2RGB(background: Background): RGB {
                 b: _arrNums[2],
             };
         } catch {
-            throw new Error("Unable to parse input string");
+            throw new Error('Unable to parse input string');
         }
     } else if (Array.isArray(background)) {
         parsed = {
@@ -114,10 +114,10 @@ function parseInput2RGB(background: Background): RGB {
     } else if (typeof background === 'object' && background !== null && background) {
         parsed = background as RGB;
     } else {
-        throw new Error("Unsuppored input type");
+        throw new Error('Unsuppored input type');
     }
     if (!isValidRGB(parsed.r, parsed.g, parsed.b)) {
-        throw new Error("RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.");
+        throw new Error('RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.');
     }
     return parsed;
 }
@@ -130,7 +130,7 @@ function isValidRGBA(r: number, g: number, b: number, a: number) {
 }
 
 function isValidRGB(r: number, g: number, b: number) {
-    if (!isValidRGBnum(r) || !isValidRGBnum(g) || !isValidRGBnum(b)) {
+    if (!isValidRGBnum(r) || !isValidRGBnum(g) || !isValidRGBnum(b)) {
         return false;
     }
     return true;
@@ -156,11 +156,7 @@ function _rgba2rgb(value: RGBA, background: RGB): RGB {
         g: Math.round((1 - value.a) * background.g + value.a * value.g),
         b: Math.round((1 - value.a) * background.b + value.a * value.b),
     };
-};
+}
 
 export default rgba2rgb;
-export {
-    rgba2rgbString,
-    rgba2rgbObjekt,
-    rgba2rgbArray
-};
+export { rgba2rgbString, rgba2rgbObjekt, rgba2rgbArray };
