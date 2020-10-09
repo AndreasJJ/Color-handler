@@ -31,6 +31,9 @@
     "url": "https://github.com/AndreasJJ/Color-handler/issues"
   },
   "homepage": "https://github.com/AndreasJJ/Color-handler#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "typescript": "^4.0.3"
   },
