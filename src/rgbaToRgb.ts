@@ -96,7 +96,7 @@ function parseInput2RGB(background: Background): RGB {
             if (!_arr || _arr.length !== 3) {
                 throw new Error();
             }
-            const _arrNums = [parseInt(_arr[0]), parseInt(_arr[1]), parseInt(_arr[2]))];
+            const _arrNums = [parseInt(_arr[0]), parseInt(_arr[1]), parseInt(_arr[2])];
             parsed = {
                 r: _arrNums[0],
                 g: _arrNums[1],
