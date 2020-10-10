@@ -1,27 +1,6 @@
-enum OutputType {
-    STRING = 'string',
-    OBJECT = 'object',
-    ARRAY = 'array',
-}
+import { RGBA, RGB, OutputType, RgbaTypes, RgbTypes } from './types';
 
-interface RGBA {
-    r: number;
-    g: number;
-    b: number;
-    a: number;
-}
-
-interface RGB {
-    r: number;
-    g: number;
-    b: number;
-}
-
-type Input = string | RGBA | [number, number, number, number];
-type Output = string | RGB | [number, number, number];
-type Background = Output;
-
-function rgba2rgb(input: Input, background: Background = { r: 255, g: 255, b: 255 }, output?: OutputType): Output {
+function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }, output?: OutputType): RgbTypes {
     switch (output) {
         case OutputType.STRING: {
             return rgba2rgbString(input, background);
@@ -38,21 +17,21 @@ function rgba2rgb(input: Input, background: Background = { r: 255, g: 255, b: 25
     }
 }
 
-function rgba2rgbString(input: Input, background: Background = { r: 255, g: 255, b: 255 }): string {
+function rgba2rgbString(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): string {
     const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
     return `rgb(${output.r}, ${output.g}, ${output.b})`;
 }
 
-function rgba2rgbObject(input: Input, background: Background = { r: 255, g: 255, b: 255 }): RGB {
+function rgba2rgbObject(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): RGB {
     return _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
 }
 
-function rgba2rgbArray(input: Input, background: Background = { r: 255, g: 255, b: 255 }): [number, number, number] {
+function rgba2rgbArray(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): [number, number, number] {
     const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
     return [output.r, output.g, output.b];
 }
 
-function parseInput2RGBA(input: Input): RGBA {
+function parseInput2RGBA(input: RgbaTypes): RGBA {
     let parsed: RGBA;
     if (typeof input === 'string') {
         try {
@@ -88,7 +67,7 @@ function parseInput2RGBA(input: Input): RGBA {
     return parsed;
 }
 
-function parseInput2RGB(background: Background): RGB {
+function parseInput2RGB(background: RgbTypes): RGB {
     let parsed: RGB;
     if (typeof background === 'string') {
         try {
