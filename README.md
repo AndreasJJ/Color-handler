@@ -8,13 +8,14 @@ A simple library for handling conversion of color models and generating differen
 * RGBA to RGB
 * HEX to RGB
 * HEX to RGBA
+* HSL to RGB 
+* RGB to HSL
 
 ## Harmony Generation
-N/A
+* Complementary
 
 ## TODO
 ### Conversion
-* HSL to RGB 
 * HSL to RGBA 
 * HWB to RGB
 * HWB to RGBA
@@ -23,13 +24,11 @@ N/A
 * NCOL to RGB
 * NCOL to RGBA
 * RGBA to HEX
-* RGBA to HSL
 * RGBA to HWB
 * RGBA to CMYK
 * RGBA to NCOL
 
 ### Harmony Generation
-* Complementary
 * Monochromatic
 * Analogous
 * Split complementary

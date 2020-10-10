@@ -1,4 +1,5 @@
 import { RGBA, RGB, OutputType, RgbaTypes, RgbTypes } from './types';
+import { parse2Rgb, parse2Rgba } from './parse';
 
 function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }, output?: OutputType): RgbTypes {
     switch (output) {
@@ -18,115 +19,17 @@ function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 
 }
 
 function rgba2rgbString(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): string {
-    const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
+    const output = _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
     return `rgb(${output.r}, ${output.g}, ${output.b})`;
 }
 
 function rgba2rgbObject(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): RGB {
-    return _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
+    return _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
 }
 
 function rgba2rgbArray(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): [number, number, number] {
-    const output = _rgba2rgb(parseInput2RGBA(input), parseInput2RGB(background));
+    const output = _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
     return [output.r, output.g, output.b];
-}
-
-function parseInput2RGBA(input: RgbaTypes): RGBA {
-    let parsed: RGBA;
-    if (typeof input === 'string') {
-        try {
-            const _arr = input.match(/[+-]?\d+(\.\d+)?/g);
-            if (!_arr || _arr.length !== 4) {
-                throw new Error();
-            }
-            const _arrNums = [parseInt(_arr[0]), parseInt(_arr[1]), parseInt(_arr[2]), parseFloat(_arr[3])];
-            parsed = {
-                r: _arrNums[0],
-                g: _arrNums[1],
-                b: _arrNums[2],
-                a: _arrNums[3],
-            };
-        } catch {
-            throw new Error('Unable to parse input string');
-        }
-    } else if (Array.isArray(input)) {
-        parsed = {
-            r: input[0],
-            g: input[1],
-            b: input[2],
-            a: input[3],
-        };
-    } else if (typeof input === 'object' && input !== null) {
-        parsed = input as RGBA;
-    } else {
-        throw new Error('Unsuppored input type');
-    }
-    if (!isValidRGBA(parsed.r, parsed.g, parsed.b, parsed.a)) {
-        throw new Error('RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.');
-    }
-    return parsed;
-}
-
-function parseInput2RGB(background: RgbTypes): RGB {
-    let parsed: RGB;
-    if (typeof background === 'string') {
-        try {
-            const _arr = background.replace(/[^\d,]/g, '').split(',');
-            if (!_arr || _arr.length !== 3) {
-                throw new Error();
-            }
-            const _arrNums = [parseInt(_arr[0]), parseInt(_arr[1]), parseInt(_arr[2])];
-            parsed = {
-                r: _arrNums[0],
-                g: _arrNums[1],
-                b: _arrNums[2],
-            };
-        } catch {
-            throw new Error('Unable to parse input string');
-        }
-    } else if (Array.isArray(background)) {
-        parsed = {
-            r: background[0],
-            g: background[1],
-            b: background[2],
-        };
-    } else if (typeof background === 'object' && background !== null && background) {
-        parsed = background as RGB;
-    } else {
-        throw new Error('Unsuppored input type');
-    }
-    if (!isValidRGB(parsed.r, parsed.g, parsed.b)) {
-        throw new Error('RGBA values are invalid. RGB should be between 0-255, and A should be between 0-1.');
-    }
-    return parsed;
-}
-
-function isValidRGBA(r: number, g: number, b: number, a: number) {
-    if (!isValidRGB(r, g, b) || !isValidAlpha(a)) {
-        return false;
-    }
-    return true;
-}
-
-function isValidRGB(r: number, g: number, b: number) {
-    if (!isValidRGBnum(r) || !isValidRGBnum(g) || !isValidRGBnum(b)) {
-        return false;
-    }
-    return true;
-}
-
-function isValidRGBnum(num: number) {
-    if (num < 0 || num > 255) {
-        return false;
-    }
-    return true;
-}
-
-function isValidAlpha(num: number) {
-    if (num < 0 || num > 1) {
-        return false;
-    }
-    return true;
 }
 
 function _rgba2rgb(value: RGBA, background: RGB): RGB {

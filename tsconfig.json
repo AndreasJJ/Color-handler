@@ -4,7 +4,7 @@
   ],
   "compilerOptions": {
     "outDir": "./lib/",
-    "sourceMap": true,
+    "sourceMap": false,
     "noImplicitAny": true,
     "module": "esnext",
     "strict": true,

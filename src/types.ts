@@ -11,6 +11,12 @@ export interface RGB {
     b: number;
 }
 
+export interface HSL {
+    h: number;
+    s: number;
+    l: number;
+}
+
 export enum OutputType {
     STRING = 'string',
     OBJECT = 'object',
@@ -19,3 +25,4 @@ export enum OutputType {
 
 export type RgbaTypes = string | RGBA | [number, number, number, number];
 export type RgbTypes = string | RGB | [number, number, number];
+export type HslTypes = string | HSL | [number, number, number];
