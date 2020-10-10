@@ -58,8 +58,8 @@ function _rgb2Hsl(r: number, g: number, b: number): HSL {
     const saturation = delta === 0 ? 0 : delta / (1 - Math.abs(2 * lightness - 1));
     return {
         h: hue * 60,
-        s: saturation,
-        l: lightness,
+        s: saturation * 100,
+        l: lightness * 100,
     };
 }
 

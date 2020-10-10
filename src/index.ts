@@ -4,6 +4,7 @@ import hex2rgba, { hex2rgbaString, hex2rgbaObject, hex2rgbaArray } from './hexTo
 import { OutputType } from './types';
 import hsl2Rgb, { hsl2RgbString, hsl2RgbObject, hsl2RgbArray } from './hslToRgb';
 import rgb2Hsl, { rgb2HslString, rgb2HslObject, rgb2HslArray } from './rgbToHsl';
+import { complementary } from './harmony';
 
 export {
     rgba2rgb,
@@ -27,4 +28,5 @@ export {
     rgb2HslString,
     rgb2HslObject,
     rgb2HslArray,
+    complementary,
 };

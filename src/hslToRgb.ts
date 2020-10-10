@@ -1,6 +1,7 @@
 import { RGB, OutputType, HslTypes, RgbTypes } from './types';
 import { parse2Hsl } from './parse';
 
+// Hue ∈ [0, 360], saturation ∈ [0, 100], and lightness L ∈ [0, 100]
 function hsl2Rgb(input: HslTypes, output?: OutputType): RgbTypes {
     switch (output) {
         case OutputType.STRING: {
@@ -36,6 +37,8 @@ function hsl2RgbArray(input: HslTypes): [number, number, number] {
 }
 
 function _hsl2Rgb(hue: number, saturation: number, lightness: number): RGB {
+    saturation /= 100;
+    lightness /= 100;
     const chroma = (1 - Math.abs(2 * lightness - 1)) * saturation;
     const Hue = hue / 60.0;
     const temp = chroma * (1 - Math.abs((Hue % 2) - 1));
