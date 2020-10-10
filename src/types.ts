@@ -25,4 +25,4 @@ export enum OutputType {
 
 export type RgbaTypes = string | RGBA | [number, number, number, number];
 export type RgbTypes = string | RGB | [number, number, number];
-export type HslTypes = string | HSL | [number, number, number];
+export type HslTypes = string | HSL | [number, number, number];
