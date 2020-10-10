@@ -28,7 +28,7 @@ N/A
 * RGBA to CMYK
 * RGBA to NCOL
 
-## Harmony Generation
+### Harmony Generation
 * Complementary
 * Monochromatic
 * Analogous
