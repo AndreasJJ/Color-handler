@@ -3,7 +3,7 @@
     "src/**/*"
   ],
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./lib/",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "esnext",
