@@ -9,6 +9,24 @@ A simple library for handling conversion of color models and generating differen
 Usage: ```import rgba2rgb from 'lumino/rgba2rgb'``` \
 Alternative usage: ```import { rgba2rgb } from 'lumino'```
 
+```typescript
+import rgba2rgb, { OutputType } from 'lumino/rgba2rgb';
+
+// Accepts an rgba-string, rgba object, or rgba array
+const res1 = rgba2rgb('rgb(255, 0, 0, 0.5)');
+// => {r: 255, g: 128, b: 128 }
+const res2 = rgba2rgb({r: 255, g: 0, b: 0, a: 0.5}, undefined, OutputType.STRING);
+// => rgb(255, 128, 128)
+const res3 = rgba2rgb([255, 0, 0, 0.5], undefined, OutputType.ARRAY);
+// => [255, 128, 128]
+
+// Accepts different backgrounds in rgb (default is white)
+const res4 = rgba2rgb('rgb(255, 0, 0, 0.5)', 'rgb(0, 0, 0)');
+const res5 = rgba2rgb('rgb(255, 0, 0, 0.5)', {r: 0, g: 0, b: 0});
+const res6 = rgba2rgb('rgb(255, 0, 0, 0.5)', [0, 0, 0]);
+// => {r: 128, g: 0, b: 0}
+```
+
 #### `hex2rgb`
 Usage: ```import hex2rgb from 'lumino/hex2rgb'``` \
 Alternative usage: ```import { hex2rgb } from 'lumino'```
