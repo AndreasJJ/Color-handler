@@ -185,9 +185,9 @@ const res1 = complementary({r: 0, g: 0, b: 0});
 const res2 = complementary({r: 128, g: 128, b: 128});
 // => {r: 128, g: 128, b: 128}
 const res3 = complementary({r: 45, g: 230, b: 73});
-// => {r: 230, g: 51, b: 45}
+// => {r: 230, g: 45, b:202}
 const res4 = complementary({r: 89, g: 0, b: 240});
-// => {r: 240, g: 164, b: 0}
+// => {r: 152, g: 240, b: 0}
 ```
 
 ## TODO
