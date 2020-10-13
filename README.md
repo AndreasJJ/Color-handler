@@ -21,12 +21,9 @@ A simple library for handling conversion of color models and generating differen
 * HWB to RGBA
 * CMYK to RGB
 * CMYK to RGBA
-* NCOL to RGB
-* NCOL to RGBA
 * RGBA to HEX
 * RGBA to HWB
 * RGBA to CMYK
-* RGBA to NCOL
 
 ### Harmony Generation
 * Monochromatic
