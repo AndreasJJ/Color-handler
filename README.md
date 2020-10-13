@@ -110,7 +110,16 @@ Usage: ```import hsl2rgb from 'lumino/hsl2rgb'``` \
 Alternative usage: ```import { hsl2rgb } from 'lumino'```
 
 ```typescript
+import hsl2rgb from 'lumino/hsl2rgb';
 
+// Accepts an hsl-string, hsl object, or hsl array. It's also possible
+// to specify output type to string, array or object. Object is default.
+const res1 = hsl2rgb('hsl(0, 0%, 100%)');
+// => {r: 255, g: 255, b: 255}
+const res2 = hsl2rgb({h: 209, s: 100, l: 57.8}, undefined, OutputType.STRING);
+// => rgb(40, 150, 255)
+const res3 = hsl2rgb([120, 100, 50], undefined, OutputType.ARRAY);
+// => [0, 255, 0]
 ```
 
 Alternative versions: \
@@ -131,7 +140,16 @@ Usage: ```import rgb2hsl from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hsl } from 'lumino'```
 
 ```typescript
+import rgb2hsl from 'lumino/rgb2hsl';
 
+// Accepts an rgb-string, rgb object, or rgb array. It's also possible
+// to specify output type to string, array or object. Object is default.
+const res1 = rgb2hsl('rgb(255, 255, 255)');
+// => {h: 0, s: 0%, l: 100%}
+const res2 = rgb2hsl({r: 40, g: 150, b: 255}, undefined, OutputType.STRING);
+// => hsl(209, 100%, 57.8%)
+const res3 = rgb2hsl([0, 255, 0], undefined, OutputType.ARRAY);
+// => [120, 100, 50]
 ```
 
 Alternative versions: \
@@ -153,16 +171,16 @@ Usage: ```import complementary from 'lumino/harmony/complementary'``` \
 Alternative usage: ```import { complementary } from 'lumino'```
 
 ```typescript
-import complementary from 'lumino/harmony/complementary'
+import complementary from 'lumino/harmony/complementary';
 
 // Takes in a RGB object and returns a RGB object of the complementary color
 const res1 = complementary({r: 0, g: 0, b: 0});
 // => {r: 0, g: 0, b: 0}
-const res1 = complementary({r: 128, g: 128, b: 128});
+const res2 = complementary({r: 128, g: 128, b: 128});
 // => {r: 128, g: 128, b: 128}
-const res1 = complementary({r: 45, g: 230, b: 73});
+const res3 = complementary({r: 45, g: 230, b: 73});
 // => {r: 230, g: 51, b: 45}
-const res1 = complementary({r: 89, g: 0, b: 240});
+const res4 = complementary({r: 89, g: 0, b: 240});
 // => {r: 240, g: 164, b: 0}
 ```
 
