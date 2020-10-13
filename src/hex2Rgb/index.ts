@@ -1,6 +1,6 @@
-import { OutputType, RGB, RgbTypes } from './types';
-import { hex2rgbaObject } from './hexToRgba';
-import rgba2rgb, { rgba2rgbString, rgba2rgbObject, rgba2rgbArray } from './rgbaToRgb';
+import { OutputType, RGB, RgbTypes } from '../types';
+import { hex2rgbaObject } from '../hex2rgba';
+import rgba2rgb, { rgba2rgbString, rgba2rgbObject, rgba2rgbArray } from '../rgba2rgb';
 
 function hex2rgb(hex: string, background = '#FFFFFF', output?: OutputType): RgbTypes {
     const colorRGBA = hex2rgbaObject(hex);

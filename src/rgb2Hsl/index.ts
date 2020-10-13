@@ -1,5 +1,5 @@
-import { parse2Rgb } from './parse';
-import { HSL, RgbTypes, OutputType, HslTypes } from './types';
+import { parse2Rgb } from '../utilities/parse';
+import { HSL, RgbTypes, OutputType, HslTypes } from '../types';
 
 function rgb2Hsl(input: RgbTypes, output?: OutputType): HslTypes {
     switch (output) {
