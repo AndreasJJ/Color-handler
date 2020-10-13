@@ -12,7 +12,8 @@ Alternative usage: ```import { rgba2rgb } from 'lumino'```
 ```typescript
 import rgba2rgb, { OutputType } from 'lumino/rgba2rgb';
 
-// Accepts an rgba-string, rgba object, or rgba array
+// Accepts an rgba-string, rgba object, or rgba array. It's also possible
+// to specify output type to string, array or object. Object is default.
 const res1 = rgba2rgb('rgb(255, 0, 0, 0.5)');
 // => {r: 255, g: 128, b: 128 }
 const res2 = rgba2rgb({r: 255, g: 0, b: 0, a: 0.5}, undefined, OutputType.STRING);
@@ -26,6 +27,19 @@ const res5 = rgba2rgb('rgb(255, 0, 0, 0.5)', {r: 0, g: 0, b: 0});
 const res6 = rgba2rgb('rgb(255, 0, 0, 0.5)', [0, 0, 0]);
 // => {r: 128, g: 0, b: 0}
 ```
+
+Alternative versions: \
+Usage: ```import { rgba2rgbString } from 'lumino/rgba2rgb'``` \
+Alternative usage: ```import { rgba2rgbString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { rgba2rgbObject } from 'lumino/rgba2rgb'``` \
+Alternative usage: ```import { rgba2rgbObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { rgba2rgbArray } from 'lumino/rgba2rgb'``` \
+Alternative usage: ```import { rgba2rgbArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
 
 #### `hex2rgb`
 Usage: ```import hex2rgb from 'lumino/hex2rgb'``` \
