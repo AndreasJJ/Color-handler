@@ -1,4 +1,4 @@
-import { RGBA, RgbaTypes } from '../types';
+import { RGBA, RgbaTypes } from '../../types';
 import { isValidRGBA } from './utilities';
 
 function parse2Rgba(input: RgbaTypes): RGBA {

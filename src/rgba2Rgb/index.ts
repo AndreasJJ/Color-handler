@@ -1,5 +1,5 @@
-import { RGBA, RGB, OutputType, RgbaTypes, RgbTypes } from './types';
-import { parse2Rgb, parse2Rgba } from './parse';
+import { RGBA, RGB, OutputType, RgbaTypes, RgbTypes } from '../types';
+import { parse2Rgb, parse2Rgba } from '../utilities/parse';
 
 function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }, output?: OutputType): RgbTypes {
     switch (output) {

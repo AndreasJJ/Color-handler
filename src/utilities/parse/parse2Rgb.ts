@@ -1,4 +1,4 @@
-import { RGB, RgbTypes } from '../types';
+import { RGB, RgbTypes } from '../../types';
 import { isValidRGB } from './utilities';
 
 function parse2Rgb(background: RgbTypes): RGB {

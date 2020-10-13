@@ -1,4 +1,4 @@
-import { RGBA, OutputType, RgbaTypes } from './types';
+import { RGBA, OutputType, RgbaTypes } from '../types';
 
 function hex2rgba(hex: string, output?: OutputType): RgbaTypes {
     switch (output) {

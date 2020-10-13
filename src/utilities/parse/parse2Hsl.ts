@@ -1,4 +1,4 @@
-import { HSL, HslTypes } from '../types';
+import { HSL, HslTypes } from '../../types';
 import { isValidHSL } from './utilities';
 
 function parse2Hsl(input: HslTypes): HSL {

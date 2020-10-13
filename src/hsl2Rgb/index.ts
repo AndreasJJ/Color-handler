@@ -1,5 +1,5 @@
-import { RGB, OutputType, HslTypes, RgbTypes } from './types';
-import { parse2Hsl } from './parse';
+import { RGB, OutputType, HslTypes, RgbTypes } from '../types';
+import { parse2Hsl } from '../utilities/parse';
 
 // Hue ∈ [0, 360], saturation ∈ [0, 100], and lightness L ∈ [0, 100]
 function hsl2Rgb(input: HslTypes, output?: OutputType): RgbTypes {
