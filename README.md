@@ -77,6 +77,34 @@ Description: Works as the main function, but only returns a RGB array.
 Usage: ```import hex2rgba from 'lumino/hex2rgba'``` \
 Alternative usage: ```import { hex2rgba } from 'lumino'```
 
+```typescript
+import hex2rgba from 'lumino/hex2rgba';
+import { OutputType } from 'lumino';
+
+// Accepts an hex-string, either of length 3, 6 (automatically sets opacity to 1), 4 or 8 
+// (not including the #).
+// It's also possible to specify output type to string, array or object. Object is default.
+const res1 = hex2rgb('#FF000099');
+// => {r: 255, g: 0, b: 0, a: 0.6 }
+const res2 = hex2rgb('#F009', undefined, OutputType.STRING);
+// => rgb(255, 0, 0, 0.6)
+const res3 = hex2rgb('#F009', undefined, OutputType.ARRAY);
+// => [255, 0, 0, 0.6]
+```
+
+Alternative versions: \
+Usage: ```import { hex2rgabString } from 'lumino/hex2rgba'``` \
+Alternative usage: ```import { hex2rgbaString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { hex2rgbaObject } from 'lumino/hex2rgba'``` \
+Alternative usage: ```import { hex2rgbaObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { hex2rgbaArray } from 'lumino/hex2rgba'``` \
+Alternative usage: ```import { hex2rgabArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
+
 #### `hsl2rgb`
 Usage: ```import hsl2rgb from 'lumino/hsl2rgb'``` \
 Alternative usage: ```import { hsl2rgb } from 'lumino'```
