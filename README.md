@@ -50,13 +50,13 @@ Alternative usage: ```import { hex2rgb } from 'lumino'```
 import hex2rgb from 'lumino/hex2rgb';
 import { OutputType } from 'lumino';
 
-// Accepts an rgba-string, rgba object, or rgba array. It's also possible
-// to specify output type to string, array or object. Object is default.
+// Accepts an hex-string, either of length 6 or 3 (not including the #).
+// It's also possible to specify output type to string, array or object. Object is default.
 const res1 = hex2rgb('#FF0000');
 // => {r: 255, g: 0, b: 0 }
-const res2 = hex2rgb('#FF0000', undefined, OutputType.STRING);
+const res2 = hex2rgb('#F00', undefined, OutputType.STRING);
 // => rgb(255, 0, 0)
-const res3 = hex2rgb('#FF0000', undefined, OutputType.ARRAY);
+const res3 = hex2rgb('#F00', undefined, OutputType.ARRAY);
 // => [255, 0, 0]
 ```
 
