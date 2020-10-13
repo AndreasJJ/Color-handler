@@ -95,29 +95,76 @@ const res3 = hex2rgb('#F009', undefined, OutputType.ARRAY);
 Alternative versions: \
 Usage: ```import { hex2rgabString } from 'lumino/hex2rgba'``` \
 Alternative usage: ```import { hex2rgbaString } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB string.
+Description: Works as the main function, but only returns a RGBA string.
 
 Usage: ```import { hex2rgbaObject } from 'lumino/hex2rgba'``` \
 Alternative usage: ```import { hex2rgbaObject } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB object.
+Description: Works as the main function, but only returns a RGBA object.
 
 Usage: ```import { hex2rgbaArray } from 'lumino/hex2rgba'``` \
 Alternative usage: ```import { hex2rgabArray } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB array.
+Description: Works as the main function, but only returns a RGBA array.
 
 #### `hsl2rgb`
 Usage: ```import hsl2rgb from 'lumino/hsl2rgb'``` \
 Alternative usage: ```import { hsl2rgb } from 'lumino'```
 
+```typescript
+
+```
+
+Alternative versions: \
+Usage: ```import { hsl2rgbString } from 'lumino/hsl2rgb'``` \
+Alternative usage: ```import { hsl2rgbString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { hsl2rgbObject } from 'lumino/hsl2rgb'``` \
+Alternative usage: ```import { hsl2rgbObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { hsl2rgbArray } from 'lumino/hsl2rgb'``` \
+Alternative usage: ```import { hsl2rgbArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
+
 #### `rgb2hsl`
 Usage: ```import rgb2hsl from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hsl } from 'lumino'```
+
+```typescript
+
+```
+
+Alternative versions: \
+Usage: ```import { rgb2hslString } from 'lumino/rgb2hsl'``` \
+Alternative usage: ```import { rgb2hslString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { rgb2hslObject } from 'lumino/rgb2hsl'``` \
+Alternative usage: ```import { rgb2hslObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { rgb2hslArray } from 'lumino/rgb2hsl'``` \
+Alternative usage: ```import { rgb2hslArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
 
 ### Generators
 #### `complementary`
 Usage: ```import complementary from 'lumino/harmony/complementary'``` \
 Alternative usage: ```import { complementary } from 'lumino'```
 
+```typescript
+import complementary from 'lumino/harmony/complementary'
+
+// Takes in a RGB object and returns a RGB object of the complementary color
+const res1 = complementary({r: 0, g: 0, b: 0});
+// => {r: 0, g: 0, b: 0}
+const res1 = complementary({r: 128, g: 128, b: 128});
+// => {r: 128, g: 128, b: 128}
+const res1 = complementary({r: 45, g: 230, b: 73});
+// => {r: 230, g: 51, b: 45}
+const res1 = complementary({r: 89, g: 0, b: 240});
+// => {r: 240, g: 164, b: 0}
+```
 
 ## TODO
 ### Conversion
