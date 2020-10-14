@@ -4,11 +4,8 @@ on:
     branches:
       - main
 jobs:
-  install-and-test:
+  generate:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -25,7 +22,7 @@ jobs:
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
         with:
           percentage: "50"
-          filename: "coverage.xml"
+          filename: "./__coverage__/coverage.xml"
       - name: Badge
         uses: emibcn/badge-action@v1
         with:
