@@ -23,7 +23,7 @@ jobs:
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
         with:
           percentage: "50"
-          filename: "__coverage__/coverage.xml"
+          filename: "__coverage__/clover.xml"
       - name: Badge
         uses: emibcn/badge-action@v1
         with:
