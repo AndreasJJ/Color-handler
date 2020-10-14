@@ -1,4 +1,4 @@
-import rgb2hsl, { rgb2HslString, rgb2HslObject, rgb2HslArray } from '../../src/rgb2hsl';
+import rgb2hsl, { rgb2hslString, rgb2hslObject, rgb2hslArray } from '../../src/rgb2hsl';
 import { OutputType } from '../../src';
 
 describe('rgb2hsl transformation', () => {
@@ -16,21 +16,21 @@ describe('rgb2hsl transformation', () => {
         expect(rgb2hsl('rgb(40, 150, 255)')).toStrictEqual({ h: 209.3, s: 100, l: 57.84 });
     });
     test('it should transform rgb to hsl and return a RGB string', () => {
-        expect(rgb2HslString('rgb(255, 128, 0)')).toBe('hsl(30.12, 100%, 50%)');
-        expect(rgb2HslString('rgb(0, 255, 0)')).toBe('hsl(120, 100%, 50%)');
-        expect(rgb2HslString('rgb(90, 30, 220)')).toBe('hsl(258.95, 76%, 49.02%)');
-        expect(rgb2HslString('rgb(22, 143, 111)')).toBe('hsl(164.13, 73.33%, 32.35%)');
+        expect(rgb2hslString('rgb(255, 128, 0)')).toBe('hsl(30.12, 100%, 50%)');
+        expect(rgb2hslString('rgb(0, 255, 0)')).toBe('hsl(120, 100%, 50%)');
+        expect(rgb2hslString('rgb(90, 30, 220)')).toBe('hsl(258.95, 76%, 49.02%)');
+        expect(rgb2hslString('rgb(22, 143, 111)')).toBe('hsl(164.13, 73.33%, 32.35%)');
     });
     test('it should transform rgb to hsl and return a RGB object', () => {
-        expect(rgb2HslObject('rgb(255, 128, 0)')).toStrictEqual({ h: 30.12, s: 100, l: 50 });
-        expect(rgb2HslObject('rgb(0, 255, 0)')).toStrictEqual({ h: 120, s: 100, l: 50 });
-        expect(rgb2HslObject('rgb(90, 30, 220)')).toStrictEqual({ h: 258.95, s: 76, l: 49.02 });
-        expect(rgb2HslObject('rgb(22, 143, 111)')).toStrictEqual({ h: 164.13, s: 73.33, l: 32.35 });
+        expect(rgb2hslObject('rgb(255, 128, 0)')).toStrictEqual({ h: 30.12, s: 100, l: 50 });
+        expect(rgb2hslObject('rgb(0, 255, 0)')).toStrictEqual({ h: 120, s: 100, l: 50 });
+        expect(rgb2hslObject('rgb(90, 30, 220)')).toStrictEqual({ h: 258.95, s: 76, l: 49.02 });
+        expect(rgb2hslObject('rgb(22, 143, 111)')).toStrictEqual({ h: 164.13, s: 73.33, l: 32.35 });
     });
     test('it should transform rgb to hsl and return a RGB array', () => {
-        expect(rgb2HslArray('rgb(255, 128, 0)')).toStrictEqual([30.12, 100, 50]);
-        expect(rgb2HslArray('rgb(0, 255, 0)')).toStrictEqual([120, 100, 50]);
-        expect(rgb2HslArray('rgb(90, 30, 220)')).toStrictEqual([258.95, 76, 49.02]);
-        expect(rgb2HslArray('rgb(22, 143, 111)')).toStrictEqual([164.13, 73.33, 32.35]);
+        expect(rgb2hslArray('rgb(255, 128, 0)')).toStrictEqual([30.12, 100, 50]);
+        expect(rgb2hslArray('rgb(0, 255, 0)')).toStrictEqual([120, 100, 50]);
+        expect(rgb2hslArray('rgb(90, 30, 220)')).toStrictEqual([258.95, 76, 49.02]);
+        expect(rgb2hslArray('rgb(22, 143, 111)')).toStrictEqual([164.13, 73.33, 32.35]);
     });
 });

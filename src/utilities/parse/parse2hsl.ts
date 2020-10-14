@@ -1,7 +1,7 @@
 import { HSL, HslTypes } from '../../types';
 import { isValidHSL } from './utilities';
 
-function parse2Hsl(input: HslTypes): HSL {
+function parse2hsl(input: HslTypes): HSL {
     let parsed;
     if (typeof input === 'string') {
         try {
@@ -38,4 +38,4 @@ function parse2Hsl(input: HslTypes): HSL {
     return parsed;
 }
 
-export default parse2Hsl;
+export default parse2hsl;

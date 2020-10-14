@@ -1,4 +1,4 @@
-import hex2rgb, { hex2rgbString, hex2rgbObject, hex2rgbArray } from '../../src/hex2Rgb';
+import hex2rgb, { hex2rgbString, hex2rgbObject, hex2rgbArray } from '../../src/hex2rgb';
 import { OutputType } from '../../src';
 
 describe('hex2rgb transformation', () => {

@@ -1,7 +1,7 @@
 import { RGBA, RgbaTypes } from '../../types';
 import { isValidRGBA } from './utilities';
 
-function parse2Rgba(input: RgbaTypes): RGBA {
+function parse2rgba(input: RgbaTypes): RGBA {
     let parsed: RGBA;
     if (typeof input === 'string') {
         try {
@@ -37,4 +37,4 @@ function parse2Rgba(input: RgbaTypes): RGBA {
     return parsed;
 }
 
-export default parse2Rgba;
+export default parse2rgba;

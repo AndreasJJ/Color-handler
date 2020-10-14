@@ -1,0 +1,35 @@
+name: Coverage Badge
+on:
+  push:
+    branches:
+      - master
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Use Node.js 12
+        uses: actions/setup-node@master
+        with:
+          node-version: '12'
+      - name: Generate coverage file
+        run: |
+          npm install
+          npm run report
+      - name: Check test coverage
+        id: test-coverage
+        uses: johanvanhelden/gha-clover-test-coverage-check@v1
+        with:
+          percentage: "50"
+          filename: "coverage.xml"
+      - name: Badge
+        uses: emibcn/badge-action@v1
+        with:
+          label: 'Test coverage'
+          status: '${{ steps.test-coverage.outputs.coverage }}'
+          color: 'blue,555,daf'
+          path: '.github/badges/coverage.svg'

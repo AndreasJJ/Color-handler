@@ -1,41 +1,41 @@
-import { parse2Rgb } from '../utilities/parse';
+import { parse2rgb } from '../utilities/parse';
 import { HSL, RgbTypes, OutputType, HslTypes } from '../types';
 
-function rgb2Hsl(input: RgbTypes, output?: OutputType): HslTypes {
+function rgb2hsl(input: RgbTypes, output?: OutputType): HslTypes {
     switch (output) {
         case OutputType.STRING: {
-            return rgb2HslString(input);
+            return rgb2hslString(input);
         }
         case OutputType.OBJECT: {
-            return rgb2HslObject(input);
+            return rgb2hslObject(input);
         }
         case OutputType.ARRAY: {
-            return rgb2HslArray(input);
+            return rgb2hslArray(input);
         }
         default: {
-            return rgb2HslObject(input);
+            return rgb2hslObject(input);
         }
     }
 }
 
-function rgb2HslString(input: RgbTypes): string {
-    const parsed = parse2Rgb(input);
-    const hsl = _rgb2Hsl(parsed.r, parsed.g, parsed.b);
+function rgb2hslString(input: RgbTypes): string {
+    const parsed = parse2rgb(input);
+    const hsl = _rgb2hsl(parsed.r, parsed.g, parsed.b);
     return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
 }
 
-function rgb2HslObject(input: RgbTypes): HSL {
-    const parsed = parse2Rgb(input);
-    return _rgb2Hsl(parsed.r, parsed.g, parsed.b);
+function rgb2hslObject(input: RgbTypes): HSL {
+    const parsed = parse2rgb(input);
+    return _rgb2hsl(parsed.r, parsed.g, parsed.b);
 }
 
-function rgb2HslArray(input: RgbTypes): [number, number, number] {
-    const parsed = parse2Rgb(input);
-    const hsl = _rgb2Hsl(parsed.r, parsed.g, parsed.b);
+function rgb2hslArray(input: RgbTypes): [number, number, number] {
+    const parsed = parse2rgb(input);
+    const hsl = _rgb2hsl(parsed.r, parsed.g, parsed.b);
     return [hsl.h, hsl.s, hsl.l];
 }
 
-function _rgb2Hsl(r: number, g: number, b: number): HSL {
+function _rgb2hsl(r: number, g: number, b: number): HSL {
     r = r / 255;
     g = g / 255;
     b = b / 255;
@@ -70,5 +70,5 @@ function _rgb2Hsl(r: number, g: number, b: number): HSL {
     };
 }
 
-export default rgb2Hsl;
-export { rgb2Hsl, rgb2HslString, rgb2HslObject, rgb2HslArray };
+export default rgb2hsl;
+export { rgb2hsl, rgb2hslString, rgb2hslObject, rgb2hslArray };
