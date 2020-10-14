@@ -17,7 +17,6 @@ jobs:
         run: |
           npm install
           npm run report
-          mkdir -p .github/badges
       - name: Check test coverage
         id: test-coverage
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
@@ -28,6 +27,9 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: refs/heads/badges
+      - name: Make folder
+          run: |
+            mkdir -p .github/badges
       - name: Badge
         uses: emibcn/badge-action@v1
         with:
