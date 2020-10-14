@@ -155,7 +155,7 @@ import rgb2hsl from 'lumino/rgb2hsl';
 const res1 = rgb2hsl('rgb(255, 255, 255)');
 // => {h: 0, s: 0%, l: 100%}
 const res2 = rgb2hsl({r: 40, g: 150, b: 255}, undefined, OutputType.STRING);
-// => hsl(209, 100%, 57.8%)
+// => hsl(209.3, 57.84%, 100%)
 const res3 = rgb2hsl([0, 255, 0], undefined, OutputType.ARRAY);
 // => [120, 100, 50]
 ```
