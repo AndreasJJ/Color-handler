@@ -18,6 +18,7 @@ jobs:
           npm install
           npm run report
           mkdir -p .github/badges
+          echo ${{ github.ref }}
       - name: Check test coverage
         id: test-coverage
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
@@ -37,10 +38,12 @@ jobs:
           name: badge
           path: '.github/badges/coverage.svg'
           if-no-files-found: error
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: badges
       - name: Commit badge
         continue-on-error: true
-        env:
-          BADGE: ${{ steps.coverage.outputs.path }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
