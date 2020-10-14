@@ -13,7 +13,7 @@ describe('rgb2hsl transformation', () => {
         expect(rgb2hsl('rgb(143, 9, 1)')).toStrictEqual({ h: 3.38, s: 98.61, l: 28.24 });
         expect(rgb2hsl('rgb(3, 192, 94)')).toStrictEqual({ h: 148.89, s: 96.92, l: 38.24 });
         expect(rgb2hsl('rgb(56, 99, 143)')).toStrictEqual({ h: 210.34, s: 43.72, l: 39.02 });
-        expect(rgb2hsl('rgb(40, 150, 255)')).toStrictEqual({ h: 209.3, s: 57.84, l: 100 });
+        expect(rgb2hsl('rgb(40, 150, 255)')).toStrictEqual({ h: 209.3, s: 100, l: 57.84 });
     });
     test('it should transform rgb to hsl and return a RGB string', () => {
         expect(rgb2HslString('rgb(255, 128, 0)')).toBe('hsl(30.12, 100%, 50%)');
