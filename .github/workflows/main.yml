@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        run: git checkout HEAD^
+      - run: git checkout HEAD^
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@master
         with:
@@ -25,7 +25,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        run: git checkout HEAD^
       - name: Use Node.js 12
         uses: actions/setup-node@master
         with:
