@@ -1,7 +1,7 @@
 import { RGB, RgbTypes } from '../../types';
 import { isValidRGB } from './utilities';
 
-function parse2Rgb(background: RgbTypes): RGB {
+function parse2rgb(background: RgbTypes): RGB {
     let parsed: RGB;
     if (typeof background === 'string') {
         try {
@@ -35,4 +35,4 @@ function parse2Rgb(background: RgbTypes): RGB {
     return parsed;
 }
 
-export default parse2Rgb;
+export default parse2rgb;

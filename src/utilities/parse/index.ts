@@ -1,5 +1,5 @@
-import parse2Rgb from './parse2Rgb';
-import parse2Rgba from './parse2Rgba';
-import parse2Hsl from './parse2Hsl';
+import parse2rgb from './parse2rgb';
+import parse2rgba from './parse2rgba';
+import parse2hsl from './parse2hsl';
 
-export { parse2Rgb, parse2Rgba, parse2Hsl };
+export { parse2rgb, parse2rgba, parse2hsl };

@@ -1,42 +1,42 @@
 import { RGB, OutputType, HslTypes, RgbTypes } from '../types';
-import { parse2Hsl } from '../utilities/parse';
+import { parse2hsl } from '../utilities/parse';
 
 // Hue ∈ [0, 360], saturation ∈ [0, 100], and lightness L ∈ [0, 100]
-function hsl2Rgb(input: HslTypes, output?: OutputType): RgbTypes {
+function hsl2rgb(input: HslTypes, output?: OutputType): RgbTypes {
     switch (output) {
         case OutputType.STRING: {
-            return hsl2RgbString(input);
+            return hsl2rgbString(input);
         }
         case OutputType.OBJECT: {
-            return hsl2RgbObject(input);
+            return hsl2rgbObject(input);
         }
         case OutputType.ARRAY: {
-            return hsl2RgbArray(input);
+            return hsl2rgbArray(input);
         }
         default: {
-            return hsl2RgbObject(input);
+            return hsl2rgbObject(input);
         }
     }
 }
 
-function hsl2RgbString(input: HslTypes): string {
-    const parsed = parse2Hsl(input);
-    const rgb = _hsl2Rgb(parsed.h, parsed.s, parsed.l);
+function hsl2rgbString(input: HslTypes): string {
+    const parsed = parse2hsl(input);
+    const rgb = _hsl2rgb(parsed.h, parsed.s, parsed.l);
     return `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
 }
 
-function hsl2RgbObject(input: HslTypes): RGB {
-    const parsed = parse2Hsl(input);
-    return _hsl2Rgb(parsed.h, parsed.s, parsed.l);
+function hsl2rgbObject(input: HslTypes): RGB {
+    const parsed = parse2hsl(input);
+    return _hsl2rgb(parsed.h, parsed.s, parsed.l);
 }
 
-function hsl2RgbArray(input: HslTypes): [number, number, number] {
-    const parsed = parse2Hsl(input);
-    const rgb = _hsl2Rgb(parsed.h, parsed.s, parsed.l);
+function hsl2rgbArray(input: HslTypes): [number, number, number] {
+    const parsed = parse2hsl(input);
+    const rgb = _hsl2rgb(parsed.h, parsed.s, parsed.l);
     return [rgb.r, rgb.g, rgb.b];
 }
 
-function _hsl2Rgb(hue: number, saturation: number, lightness: number): RGB {
+function _hsl2rgb(hue: number, saturation: number, lightness: number): RGB {
     saturation /= 100;
     lightness /= 100;
     const chroma = (1 - Math.abs(2 * lightness - 1)) * saturation;
@@ -68,5 +68,5 @@ function _hsl2Rgb(hue: number, saturation: number, lightness: number): RGB {
     };
 }
 
-export default hsl2Rgb;
-export { hsl2RgbString, hsl2RgbObject, hsl2RgbArray };
+export default hsl2rgb;
+export { hsl2rgbString, hsl2rgbObject, hsl2rgbArray };

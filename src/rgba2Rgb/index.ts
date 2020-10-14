@@ -1,5 +1,5 @@
 import { RGBA, RGB, OutputType, RgbaTypes, RgbTypes } from '../types';
-import { parse2Rgb, parse2Rgba } from '../utilities/parse';
+import { parse2rgb, parse2rgba } from '../utilities/parse';
 
 function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }, output?: OutputType): RgbTypes {
     switch (output) {
@@ -19,16 +19,16 @@ function rgba2rgb(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 
 }
 
 function rgba2rgbString(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): string {
-    const output = _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
+    const output = _rgba2rgb(parse2rgba(input), parse2rgb(background));
     return `rgb(${output.r}, ${output.g}, ${output.b})`;
 }
 
 function rgba2rgbObject(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): RGB {
-    return _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
+    return _rgba2rgb(parse2rgba(input), parse2rgb(background));
 }
 
 function rgba2rgbArray(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255, b: 255 }): [number, number, number] {
-    const output = _rgba2rgb(parse2Rgba(input), parse2Rgb(background));
+    const output = _rgba2rgb(parse2rgba(input), parse2rgb(background));
     return [output.r, output.g, output.b];
 }
 
