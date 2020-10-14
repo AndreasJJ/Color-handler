@@ -33,10 +33,11 @@ function rgba2rgbArray(input: RgbaTypes, background: RgbTypes = { r: 255, g: 255
 }
 
 function _rgba2rgb(value: RGBA, background: RGB): RGB {
+    const a = Math.round((value.a + Number.EPSILON) * 100) / 100;
     return {
-        r: Math.round((1 - value.a) * background.r + value.a * value.r),
-        g: Math.round((1 - value.a) * background.g + value.a * value.g),
-        b: Math.round((1 - value.a) * background.b + value.a * value.b),
+        r: Math.round((1 - a) * background.r + a * value.r),
+        g: Math.round((1 - a) * background.g + a * value.g),
+        b: Math.round((1 - a) * background.b + a * value.b),
     };
 }
 
