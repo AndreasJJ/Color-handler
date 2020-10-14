@@ -1,5 +1,6 @@
-# Lumino
-Still WIP
+# Lumino (WIP)
+
+![CI](https://github.com/AndreasJJ/Lumino/workflows/CI/badge.svg)
 
 A simple library for handling conversion of color models and generating different color harmonies.
 
