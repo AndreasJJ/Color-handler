@@ -20,6 +20,7 @@ jobs:
           cd src
           ls -A 
           cd ..
+          echo ${{ github.ref }}
       - name: Install and Test
         run: |
           npm install
