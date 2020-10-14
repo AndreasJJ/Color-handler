@@ -24,6 +24,10 @@ jobs:
         with:
           percentage: "50"
           filename: "__coverage__/clover.xml"
+      - name: Checkout to badges
+        uses: actions/checkout@master
+        with:
+          ref: refs/heads/badges
       - name: Badge
         uses: emibcn/badge-action@v1
         with:
@@ -37,10 +41,6 @@ jobs:
           name: badge
           path: '.github/badges/coverage.svg'
           if-no-files-found: error
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          ref: refs/heads/badges
       - name: Commit badge
         continue-on-error: true
         run: |
