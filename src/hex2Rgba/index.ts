@@ -49,7 +49,7 @@ function _hex2rgba(hex: string): RGBA {
         alphaHex += alphaHex;
         hex = hex.slice(0, 3);
     }
-    const a = parseInt(alphaHex, 16) / 255;
+    const a = Math.round((parseInt(alphaHex, 16) / 255 + Number.EPSILON) * 100) / 100;
 
     if (hex.length === 3) {
         hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
