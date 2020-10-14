@@ -17,7 +17,7 @@ function parse2Rgba(input: RgbaTypes): RGBA {
                 a: _arrNums[3],
             };
         } catch {
-            throw new Error('Unable to parse input string');
+            throw new Error(`Unable to parse input string: ${input}`);
         }
     } else if (Array.isArray(input)) {
         parsed = {

@@ -16,7 +16,7 @@ function parse2Rgb(background: RgbTypes): RGB {
                 b: _arrNums[2],
             };
         } catch {
-            throw new Error('Unable to parse input string');
+            throw new Error(`Unable to parse input string ${background}`);
         }
     } else if (Array.isArray(background)) {
         parsed = {
