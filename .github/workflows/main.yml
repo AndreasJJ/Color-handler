@@ -1,5 +1,9 @@
 name: CI
-on: push
+on: 
+  push:
+    branches:
+      - '!badges'
+      - '**'
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
