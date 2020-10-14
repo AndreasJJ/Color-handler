@@ -17,7 +17,7 @@ jobs:
         run: |
           npm install
           npm run report
-          ls -A
+          mkdir .github/badges
       - name: Check test coverage
         id: test-coverage
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
