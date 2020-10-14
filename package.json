@@ -6,6 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
+    "report": "jest --coverageReporters 'clover' --coverageDirectory '<rootDir>/__coverage__' --collectCoverage true",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "prepublish": "tsc"
   },
