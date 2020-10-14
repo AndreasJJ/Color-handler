@@ -112,6 +112,7 @@ Alternative usage: ```import { hex2rgabArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a RGBA array.
 
 #### `hsl2rgb`
+**Notice**: This function rounds to the closest integer, as such some accuracy from hsl will be lost.
 Usage: ```import hsl2rgb from 'lumino/hsl2rgb'``` \
 Alternative usage: ```import { hsl2rgb } from 'lumino'```
 
@@ -142,6 +143,7 @@ Alternative usage: ```import { hsl2rgbArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a RGB array.
 
 #### `rgb2hsl`
+**Notice**: This function rounds to a float with 2 decimals accuracy, as such some accuracy will be lost.
 Usage: ```import rgb2hsl from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hsl } from 'lumino'```
 

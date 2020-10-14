@@ -56,10 +56,17 @@ function _rgb2Hsl(r: number, g: number, b: number): HSL {
     }
     const lightness = (min + max) / 2;
     const saturation = delta === 0 ? 0 : delta / (1 - Math.abs(2 * lightness - 1));
+
+    let h = Math.round((hue * 60 + Number.EPSILON) * 100) / 100;
+    if (h < 0) {
+        h += 360;
+    }
+    const s = Math.round((saturation * 100 + Number.EPSILON) * 100) / 100;
+    const l = Math.round((lightness * 100 + Number.EPSILON) * 100) / 100;
     return {
-        h: hue * 60,
-        s: saturation * 100,
-        l: lightness * 100,
+        h,
+        s,
+        l,
     };
 }
 
