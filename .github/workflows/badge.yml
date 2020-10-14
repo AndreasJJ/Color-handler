@@ -28,8 +28,8 @@ jobs:
         with:
           ref: refs/heads/badges
       - name: Make folder
-          run: |
-            mkdir -p .github/badges
+        run: |
+          mkdir -p .github/badges
       - name: Badge
         uses: emibcn/badge-action@v1
         with:
