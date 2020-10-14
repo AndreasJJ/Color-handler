@@ -87,6 +87,7 @@ typings/
 .git
 .eslintrc.js
 .prettierrc.js
+.github
 
 # source code
 src
