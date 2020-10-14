@@ -32,10 +32,10 @@ function hex2rgbaArray(hex: string): [number, number, number, number] {
 }
 
 function _hex2rgba(hex: string): RGBA {
-    const hexPattern = /^#(?:[0-9a-fA-F]{3}){1,2}(?:[0-9a-fA-F]{2})?$/;
+    const hexPattern = /^#((?:[0-9a-fA-F]{3}){1}(?:[0-9a-fA-F]{1})?|((?:[0-9a-fA-F]{6})(?:[0-9a-fA-F]{2})?))$/;
 
     if (typeof hex !== 'string' || !hexPattern.test(hex)) {
-        throw new TypeError('Invalid hex string');
+        throw new TypeError(`Invalid hex string ${hex}`);
     }
 
     hex = hex.replace('#', '');
@@ -49,7 +49,7 @@ function _hex2rgba(hex: string): RGBA {
         alphaHex += alphaHex;
         hex = hex.slice(0, 3);
     }
-    const a = parseInt(alphaHex, 16) / 255;
+    const a = Math.round((parseInt(alphaHex, 16) / 255 + Number.EPSILON) * 100) / 100;
 
     if (hex.length === 3) {
         hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];

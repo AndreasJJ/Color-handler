@@ -5,14 +5,16 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "report": "jest --coverageReporters 'clover' --coverageDirectory '<rootDir>/__coverage__' --collectCoverage true",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
-    "prepublish": "tsc"
+    "prepublishOnly": "tsc"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint && npm run test"
     }
   },
   "repository": {
@@ -58,12 +60,15 @@
     "typescript": "^4.0.3"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
-    "prettier": "^2.1.2"
+    "jest": "^26.5.3",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1"
   }
 }

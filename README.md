@@ -112,6 +112,7 @@ Alternative usage: ```import { hex2rgabArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a RGBA array.
 
 #### `hsl2rgb`
+**Notice**: This function rounds to the closest integer, as such some accuracy from hsl will be lost.
 Usage: ```import hsl2rgb from 'lumino/hsl2rgb'``` \
 Alternative usage: ```import { hsl2rgb } from 'lumino'```
 
@@ -142,6 +143,7 @@ Alternative usage: ```import { hsl2rgbArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a RGB array.
 
 #### `rgb2hsl`
+**Notice**: This function rounds to a float with 2 decimals accuracy, as such some accuracy will be lost.
 Usage: ```import rgb2hsl from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hsl } from 'lumino'```
 
@@ -153,7 +155,7 @@ import rgb2hsl from 'lumino/rgb2hsl';
 const res1 = rgb2hsl('rgb(255, 255, 255)');
 // => {h: 0, s: 0%, l: 100%}
 const res2 = rgb2hsl({r: 40, g: 150, b: 255}, undefined, OutputType.STRING);
-// => hsl(209, 100%, 57.8%)
+// => hsl(209.3, 100%, 57.84%)
 const res3 = rgb2hsl([0, 255, 0], undefined, OutputType.ARRAY);
 // => [120, 100, 50]
 ```
@@ -185,9 +187,9 @@ const res1 = complementary({r: 0, g: 0, b: 0});
 const res2 = complementary({r: 128, g: 128, b: 128});
 // => {r: 128, g: 128, b: 128}
 const res3 = complementary({r: 45, g: 230, b: 73});
-// => {r: 230, g: 51, b: 45}
+// => {r: 230, g: 45, b:202}
 const res4 = complementary({r: 89, g: 0, b: 240});
-// => {r: 240, g: 164, b: 0}
+// => {r: 152, g: 240, b: 0}
 ```
 
 ## TODO
