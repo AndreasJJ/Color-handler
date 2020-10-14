@@ -9,7 +9,7 @@
     "coverage": "jest --coverage",
     "report": "jest --coverageReporters 'clover' --coverageDirectory '<rootDir>/__coverage__' --collectCoverage true",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
-    "prepublish": "tsc"
+    "prepublishOnly": "tsc"
   },
   "husky": {
     "hooks": {
