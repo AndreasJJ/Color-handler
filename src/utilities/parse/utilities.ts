@@ -33,4 +33,11 @@ function isValidHSL(hue: number, saturation: number, lightness: number): boolean
     return true;
 }
 
-export { isValidRGBA, isValidRGB, isValidHSL };
+function isValidCMYK(c: number, m: number, y: number, k: number): boolean {
+    if (c < 0 || c > 100 || m < 0 || m > 100 || y < 0 || y > 100 || k < 0 || k > 100) {
+        return false;
+    }
+    return true;
+}
+
+export { isValidRGBA, isValidRGB, isValidHSL, isValidCMYK };
