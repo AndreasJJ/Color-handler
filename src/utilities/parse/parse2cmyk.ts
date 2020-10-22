@@ -5,7 +5,7 @@ function parse2cmyk(input: CmykTypes): CMYK {
     let parsed;
     if (typeof input === 'string') {
         try {
-            const pattern = /cmyk\((?<cyan>[+-]?\d+(\.\d+)?)\%, ?(?<magenta>[+-]?\d+(\.\d+)?)\%, ?(?<yellow>[+-]?\d+(\.\d+)?)\%, ?(?<key>[+-]?\d+(\.\d+)?)\%\)/g;
+            const pattern = /device-cmyk\((?<cyan>[+-]?\d+(\.\d+)?)\%, ?(?<magenta>[+-]?\d+(\.\d+)?)\%, ?(?<yellow>[+-]?\d+(\.\d+)?)\%, ?(?<key>[+-]?\d+(\.\d+)?)\%\)/g;
             const regexRes = pattern.exec(input);
             if (regexRes?.groups) {
                 const cyan = regexRes.groups['cyan'];

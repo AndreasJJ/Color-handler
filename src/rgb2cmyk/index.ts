@@ -21,7 +21,7 @@ function rgb2cmyk(input: RgbTypes, output?: OutputType): CmykTypes {
 function rgb2cmykString(input: RgbTypes): string {
     const parsed = parse2rgb(input);
     const cmyk = _rgb2cmyk(parsed.r, parsed.g, parsed.b);
-    return `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
+    return `device-cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
 }
 
 function rgb2cmykObject(input: RgbTypes): CMYK {
@@ -46,10 +46,10 @@ function _rgb2cmyk(r: number, g: number, b: number): CMYK {
     const y = (1 - bc - k) / (1 - k);
 
     return {
-        c,
-        m,
-        y,
-        k,
+        c: Math.round(c * 100),
+        m: Math.round(m * 100),
+        y: Math.round(y * 100),
+        k: Math.round(k * 100),
     };
 }
 
