@@ -58,4 +58,4 @@ function toPercentageAndRoundTo2Digits(num: number): number {
 }
 
 export default rgb2cmyk;
-export { rgb2cmyk, rgb2cmykString, rgb2cmykObject, rgb2cmykArray };
+export { rgb2cmykString, rgb2cmykObject, rgb2cmykArray };

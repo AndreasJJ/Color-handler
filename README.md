@@ -175,6 +175,68 @@ Usage: ```import { rgb2hslArray } from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hslArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a RGB array.
 
+#### `cmyk2rgb`
+**Notice**: You should be careful with conversion between cmyk and rgb as it brings in inaccuracies
+Usage: ```import cmyk2rgb from 'lumino/cmyk2rgb'``` \
+Alternative usage: ```import { cmyk2rgb } from 'lumino'```
+
+```typescript
+import cmyk2rgb from 'lumino/cmyk2rgb';
+
+// Accepts an rgb-string, rgb object, or rgb array. It's also possible
+// to specify output type to string, array or object. Object is default.
+const res1 = cmyk2rgb('device-cmyk(98%, 0%, 51%, 25%)');
+// => { r: 4, g: 191, b: 94 }
+const res2 = cmyk2rgb({ c: 59.09, m: 86.36, y: 0, k: 13.73 }, undefined, OutputType.STRING);
+// => rgb(90, 30, 220)
+const res3 = cmyk2rgb([85, 0, 22, 44], undefined, OutputType.ARRAY);
+// => [21, 143, 111]
+```
+
+Alternative versions: \
+Usage: ```import { cmyk2rgbString } from 'lumino/cmyk2rgb'``` \
+Alternative usage: ```import { cmyk2rgbString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { cmyk2rgbObject } from 'lumino/cmyk2rgb'``` \
+Alternative usage: ```import { cmyk2rgbObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { cmyk2rgbArray } from 'lumino/cmyk2rgb'``` \
+Alternative usage: ```import { cmyk2rgbArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
+
+#### `rgb2cmyk`
+**Notice**: You should be careful with conversion between cmyk and rgb as it brings in inaccuracies
+Usage: ```import rgb2cmyk from 'lumino/rgb2cmyk'``` \
+Alternative usage: ```import { rgb2cmyk } from 'lumino'```
+
+```typescript
+import rgb2cmyk from 'lumino/rgb2cmyk';
+
+// Accepts an rgb-string, rgb object, or rgb array. It's also possible
+// to specify output type to string, array or object. Object is default.
+const res1 = rgb2cmyk('rgb(90, 30, 220)');
+// => { c: 59.09, m: 86.36, y: 0, k: 13.73 }
+const res2 = rgb2cmyk({r: 22, g: 143, b: 111}, undefined, OutputType.STRING);
+// => device-cmyk(84.62%, 0%, 22.38%, 43.92%)
+const res3 = rgb2cmyk([255, 128, 0], undefined, OutputType.ARRAY);
+// => [0, 49.8, 100, 0]
+```
+
+Alternative versions: \
+Usage: ```import { rgb2cmykString } from 'lumino/rgb2cmyk'``` \
+Alternative usage: ```import { rgb2cmykString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { rgb2cmykObject } from 'lumino/rgb2cmyk'``` \
+Alternative usage: ```import { rgb2cmykObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { rgb2cmykArray } from 'lumino/rgb2cmyk'``` \
+Alternative usage: ```import { rgb2cmykArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
+
 ### Generators
 #### `complementary`
 Usage: ```import complementary from 'lumino/harmony/complementary'``` \
@@ -196,14 +258,10 @@ const res4 = complementary({r: 89, g: 0, b: 240});
 
 ## TODO
 ### Conversion
-* HSL to RGBA 
-* HWB to RGB
-* HWB to RGBA
-* CMYK to RGB
-* CMYK to RGBA
+* HSL(A) to RGBA 
+* HWB to RGB(A)
 * RGBA to HEX
-* RGBA to HWB
-* RGBA to CMYK
+* RGB(A) to HWB
 
 ### Harmony Generation
 * Monochromatic
