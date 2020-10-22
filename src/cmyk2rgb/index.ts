@@ -37,9 +37,9 @@ function cmyk2rgbArray(cmyk: CmykTypes): [number, number, number] {
 }
 
 function _cmyk2rgb(cmyk: CMYK): RGB {
-    const r = 255 * (1 - cmyk.c / 100) * (1 - cmyk.k / 100);
-    const g = 255 * (1 - cmyk.m / 100) * (1 - cmyk.k / 100);
-    const b = 255 * (1 - cmyk.y / 100) * (1 - cmyk.k / 100);
+    const r = Math.round(255 * (1 - cmyk.c / 100) * (1 - cmyk.k / 100));
+    const g = Math.round(255 * (1 - cmyk.m / 100) * (1 - cmyk.k / 100));
+    const b = Math.round(255 * (1 - cmyk.y / 100) * (1 - cmyk.k / 100));
     return {
         r,
         g,

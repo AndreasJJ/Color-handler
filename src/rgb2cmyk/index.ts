@@ -46,11 +46,15 @@ function _rgb2cmyk(r: number, g: number, b: number): CMYK {
     const y = (1 - bc - k) / (1 - k);
 
     return {
-        c: Math.round(c * 100),
-        m: Math.round(m * 100),
-        y: Math.round(y * 100),
-        k: Math.round(k * 100),
+        c: toPercentageAndRoundTo2Digits(c),
+        m: toPercentageAndRoundTo2Digits(m),
+        y: toPercentageAndRoundTo2Digits(y),
+        k: toPercentageAndRoundTo2Digits(k),
     };
+}
+
+function toPercentageAndRoundTo2Digits(num: number): number {
+    return Math.round((num * 100 + Number.EPSILON) * 100) / 100;
 }
 
 export default rgb2cmyk;
