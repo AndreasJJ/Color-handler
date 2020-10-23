@@ -1,4 +1,4 @@
-# Lumino (WIP)
+# Lumino
 
 ![CI](https://github.com/AndreasJJ/Lumino/workflows/CI/badge.svg)
 ![.github/workflows/badge.yml](https://raw.githubusercontent.com/AndreasJJ/Lumino/badges/.github/badges/coverage.svg)
@@ -274,6 +274,28 @@ const res4 = triadic({r: 44, g: 222, b: 111});
 // => [{r: 44, g: 222, b: 111}, {r: 111, g: 44, b: 222}, {r: 222, g: 111, b: 44}]
 ```
 
+#### `tetradic`
+Usage: ```import tetradic from 'lumino/harmony'``` \
+Alternative usage: ```import { tetradic } from 'lumino'```
+
+NB: It defaults to a 60% distance difference, but it's possible to give a custom distance as a second argument.
+
+```typescript
+import tetradic from 'lumino/harmony';
+
+// Takes in a RGB object and returns an array of 4 RGB object of the tetradic colors
+const res1 = tetradic({r: 0, g: 0, b: 0});
+// => [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
+const res2 = tetradic({r: 40, g: 120, b: 200});
+// => [{r: 40, g: 120, b: 200}, {r: 120, g: 40, b: 200}, {r: 120, g: 200, b: 40}, {r: 200, g: 120, b: 40}]
+const res3 = tetradic({r: 200, g: 34, b: 89});
+// => [{r: 200, g: 34, b: 89},  {r: 200, g: 145, b: 34}, {r: 34, g: 89, b: 200}, {r: 34, g: 200, b: 145}]
+
+// Custom distance difference set to 90
+const res4 = tetradic({ r: 44, g: 222, b: 111 }, 90));
+// => [{r: 44, g: 222, b: 111}, {r: 44, g: 66, b: 222}, {r: 222, g: 200, b: 44}, {r: 222, g: 44, b: 155}]
+```
+
 ## TODO
 ### Conversion
 * HSL(A) to RGBA 
@@ -285,4 +307,3 @@ const res4 = triadic({r: 44, g: 222, b: 111});
 * Monochromatic
 * Analogous
 * Split complementary
-* Tetradic
