@@ -1,4 +1,4 @@
-import { complementary } from '../../src/harmony/';
+import { complementary } from '../../src/harmony';
 
 describe('Complementary Generator', () => {
     test('it should generate the correct complementary colors given an inital color.', () => {

@@ -1,4 +1,4 @@
-import { triadic } from '../../src/harmony/';
+import { triadic } from '../../src/harmony';
 
 describe('Complementary Generator', () => {
     test('it should generate the correct triadic colors given an inital color.', () => {
