@@ -296,6 +296,24 @@ const res4 = tetradic({ r: 44, g: 222, b: 111 }, 90));
 // => [{r: 44, g: 222, b: 111}, {r: 44, g: 66, b: 222}, {r: 222, g: 200, b: 44}, {r: 222, g: 44, b: 155}]
 ```
 
+#### `analogous`
+Usage: ```import analogous from 'lumino/harmony'``` \
+Alternative usage: ```import { analogous } from 'lumino'```
+
+```typescript
+import analogous from 'lumino/harmony';
+
+// Takes in a RGB object and returns an array of 3 RGB object of the analogous colors
+const res1 = analogous({r: 0, g: 0, b: 0});
+// => [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
+const res2 = analogous({r: 40, g: 120, b: 200});
+// => [{r: 40, g: 120, b: 200}, {r: 40, g: 40, b: 200}, {r: 40, g: 200, b: 200}]
+const res3 = analogous({r: 200, g: 34, b: 89});
+// => [{r: 200, g: 34, b: 89}, {r: 200, g: 62, b: 34}, {r: 200, g: 34, b: 172}]
+const res4 = analogous({r: 44, g: 222, b: 111});
+// => [{r: 44, g: 222, b: 111}, {r: 44, g: 222, b: 200}, {r: 66, g: 222, b: 44}]
+```
+
 ## TODO
 ### Conversion
 * HSL(A) to RGBA 
@@ -305,5 +323,4 @@ const res4 = tetradic({ r: 44, g: 222, b: 111 }, 90));
 
 ### Harmony Generation
 * Monochromatic
-* Analogous
 * Split complementary

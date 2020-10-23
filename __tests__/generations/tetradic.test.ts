@@ -1,4 +1,4 @@
-import { tetradic } from '../../src/harmony/';
+import { tetradic } from '../../src/harmony';
 
 describe('Complementary Generator', () => {
     test('it should generate the correct tetradic colors given an inital color.', () => {
