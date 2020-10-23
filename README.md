@@ -165,15 +165,15 @@ const res3 = rgb2hsl([0, 255, 0], undefined, OutputType.ARRAY);
 Alternative versions: \
 Usage: ```import { rgb2hslString } from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hslString } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB string.
+Description: Works as the main function, but only returns a HSL string.
 
 Usage: ```import { rgb2hslObject } from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hslObject } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB object.
+Description: Works as the main function, but only returns a HSL object.
 
 Usage: ```import { rgb2hslArray } from 'lumino/rgb2hsl'``` \
 Alternative usage: ```import { rgb2hslArray } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB array.
+Description: Works as the main function, but only returns a HSL array.
 
 #### `cmyk2rgb`
 **Notice**: You should be careful with conversion between cmyk and rgb as it brings in inaccuracies
@@ -227,15 +227,15 @@ const res3 = rgb2cmyk([255, 128, 0], undefined, OutputType.ARRAY);
 Alternative versions: \
 Usage: ```import { rgb2cmykString } from 'lumino/rgb2cmyk'``` \
 Alternative usage: ```import { rgb2cmykString } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB string.
+Description: Works as the main function, but only returns a CMYK string.
 
 Usage: ```import { rgb2cmykObject } from 'lumino/rgb2cmyk'``` \
 Alternative usage: ```import { rgb2cmykObject } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB object.
+Description: Works as the main function, but only returns a CMYK object.
 
 Usage: ```import { rgb2cmykArray } from 'lumino/rgb2cmyk'``` \
 Alternative usage: ```import { rgb2cmykArray } from 'lumino'``` \
-Description: Works as the main function, but only returns a RGB array.
+Description: Works as the main function, but only returns a CMYK array.
 
 ### Generators
 #### `complementary`
@@ -243,7 +243,7 @@ Usage: ```import complementary from 'lumino/harmony/complementary'``` \
 Alternative usage: ```import { complementary } from 'lumino'```
 
 ```typescript
-import complementary from 'lumino/harmony/complementary';
+import complementary from 'lumino/harmony';
 
 // Takes in a RGB object and returns a RGB object of the complementary color
 const res1 = complementary({r: 0, g: 0, b: 0});
@@ -254,6 +254,24 @@ const res3 = complementary({r: 45, g: 230, b: 73});
 // => {r: 230, g: 45, b:202}
 const res4 = complementary({r: 89, g: 0, b: 240});
 // => {r: 152, g: 240, b: 0}
+```
+
+#### `triadic`
+Usage: ```import triadic from 'lumino/harmony'``` \
+Alternative usage: ```import { triadic } from 'lumino'```
+
+```typescript
+import triadic from 'lumino/harmony';
+
+// Takes in a RGB object and returns an array of 3 RGB object of the triadic colors
+const res1 = triadic({r: 0, g: 0, b: 0});
+// => [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
+const res2 = triadic({r: 40, g: 120, b: 200});
+// => [{r: 40, g: 120, b: 200}, {r: 200, g: 40, b: 120}, {r: 120, g: 200, b: 40}]
+const res3 = triadic({r: 200, g: 34, b: 89});
+// => [{r: 200, g: 34, b: 89}, {r: 89, g: 200, b: 34}, {r: 34, g: 89, b: 200}]
+const res4 = triadic({r: 44, g: 222, b: 111});
+// => [{r: 44, g: 222, b: 111}, {r: 111, g: 44, b: 222}, {r: 222, g: 111, b: 44}]
 ```
 
 ## TODO
@@ -267,5 +285,4 @@ const res4 = complementary({r: 89, g: 0, b: 240});
 * Monochromatic
 * Analogous
 * Split complementary
-* Triadic
 * Tetradic
