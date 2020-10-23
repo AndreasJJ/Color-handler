@@ -1,3 +1,4 @@
 import complementary from './complementary';
+import triadic from './triadic';
 
-export { complementary };
+export { complementary, triadic };
