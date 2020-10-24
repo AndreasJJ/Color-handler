@@ -24,6 +24,12 @@ export interface CMYK {
     k: number;
 }
 
+export interface HWB {
+    h: number;
+    w: number;
+    b: number;
+}
+
 export enum OutputType {
     STRING = 'string',
     OBJECT = 'object',
@@ -34,3 +40,4 @@ export type RgbaTypes = string | RGBA | [number, number, number, number];
 export type RgbTypes = string | RGB | [number, number, number];
 export type HslTypes = string | HSL | [number, number, number];
 export type CmykTypes = string | CMYK | [number, number, number, number];
+export type HwbTypes = string | HWB | [number, number, number];
