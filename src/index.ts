@@ -6,7 +6,7 @@ import hsl2rgb, { hsl2rgbString, hsl2rgbObject, hsl2rgbArray } from './hsl2rgb';
 import rgb2hsl, { rgb2hslString, rgb2hslObject, rgb2hslArray } from './rgb2hsl';
 import rgb2cmyk, { rgb2cmykString, rgb2cmykObject, rgb2cmykArray } from './rgb2cmyk';
 import cmyk2rgb, { cmyk2rgbString, cmyk2rgbObject, cmyk2rgbArray } from './cmyk2rgb';
-import { complementary, triadic, tetradic } from './harmony';
+import { complementary, triadic, tetradic, splitComplementary } from './harmony';
 
 export {
     rgba2rgb,
@@ -41,4 +41,5 @@ export {
     complementary,
     triadic,
     tetradic,
+    splitComplementary,
 };
