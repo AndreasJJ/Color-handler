@@ -40,4 +40,11 @@ function isValidCMYK(c: number, m: number, y: number, k: number): boolean {
     return true;
 }
 
-export { isValidRGBA, isValidRGB, isValidHSL, isValidCMYK };
+function isValidHWB(hue: number, white: number, black: number): boolean {
+    if (hue < 0 || hue > 360 || white < 0 || white > 100 || black < 0 || black > 100) {
+        return false;
+    }
+    return true;
+}
+
+export { isValidRGBA, isValidRGB, isValidHSL, isValidCMYK, isValidHWB };

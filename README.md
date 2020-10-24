@@ -237,6 +237,62 @@ Usage: ```import { rgb2cmykArray } from 'lumino/rgb2cmyk'``` \
 Alternative usage: ```import { rgb2cmykArray } from 'lumino'``` \
 Description: Works as the main function, but only returns a CMYK array.
 
+#### `hwb2rgb`
+Usage: ```import hwb2rgb from 'lumino/hwb2rgb'``` \
+Alternative usage: ```import { hwb2rgb } from 'lumino'```
+
+```typescript
+import hwb2rgb from 'lumino/hwb2rgb';
+
+const res1 = hwb2rgb('hwb(3.38, 0.39%, 43.92%)');
+// => { r: 143, g: 9, b: 1 }
+const res2 = hwb2rgb({ h: 120, w: 0, b: 0 }, undefined, OutputType.STRING);
+// => rgb(0, 255, 0)
+const res3 = hwb2rgb([258.95, 11.76, 13.73], undefined, OutputType.ARRAY);
+// => [90, 30, 220]
+```
+
+Alternative versions: \
+Usage: ```import { hwb2rgbString } from 'lumino/hwb2rgb'``` \
+Alternative usage: ```import { hwb2rgbString } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB string.
+
+Usage: ```import { hwb2rgbObject } from 'lumino/hwb2rgb'``` \
+Alternative usage: ```import { hwb2rgbObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB object.
+
+Usage: ```import { hwb2rgbArray } from 'lumino/hwb2rgb'``` \
+Alternative usage: ```import { hwb2rgbArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a RGB array.
+
+#### `rgb2hwb`
+Usage: ```import rgb2hwb from 'lumino/rgb2hwb'``` \
+Alternative usage: ```import { rgb2hwb } from 'lumino'```
+
+```typescript
+import rgb2hwb from 'lumino/rgb2hwb';
+
+const res1 = rgb2hwb('rgb(90, 30, 220)');
+// => { h: 258.95, w: 11.76, b: 13.73 }
+const res2 = rgb2hwb({r: 22, g: 143, b: 111}, undefined, OutputType.STRING);
+// => hwb(164.13, 8.63%, 43.92%)
+const res3 = rgb2hwb([255, 128, 0], undefined, OutputType.ARRAY);
+// => [30.12, 0, 0]
+```
+
+Alternative versions: \
+Usage: ```import { rgb2hwbString } from 'lumino/rgb2hwb'``` \
+Alternative usage: ```import { rgb2hwbString } from 'lumino'``` \
+Description: Works as the main function, but only returns a HWB string.
+
+Usage: ```import { rgb2hwbObject } from 'lumino/rgb2hwb'``` \
+Alternative usage: ```import { rgb2hwbObject } from 'lumino'``` \
+Description: Works as the main function, but only returns a HWB object.
+
+Usage: ```import { rgb2hwbArray } from 'lumino/rgb2hwb'``` \
+Alternative usage: ```import { rgb2hwbArray } from 'lumino'``` \
+Description: Works as the main function, but only returns a HWB array.
+
 ### Generators
 #### `complementary`
 Usage: ```import complementary from 'lumino/harmony/complementary'``` \
@@ -334,10 +390,8 @@ const res4 = analogous({r: 44, g: 222, b: 111});
 
 ## TODO
 ### Conversion
-* HSL(A) to RGBA 
-* HWB to RGB(A)
+* HSL(A) to RGBA
 * RGBA to HEX
-* RGB(A) to HWB
 
 ### Harmony Generation
 * Monochromatic
