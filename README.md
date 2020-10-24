@@ -314,6 +314,24 @@ const res4 = analogous({r: 44, g: 222, b: 111});
 // => [{r: 44, g: 222, b: 111}, {r: 44, g: 222, b: 200}, {r: 66, g: 222, b: 44}]
 ```
 
+#### `splitComplementary`
+Usage: ```import splitComplementary from 'lumino/harmony'``` \
+Alternative usage: ```import { splitComplementary } from 'lumino'```
+
+```typescript
+import splitComplementary from 'lumino/harmony';
+
+// Takes in a RGB object and returns an array of 3 RGB object of the split-complementary colors
+const res1 = analogous({r: 0, g: 0, b: 0});
+// => [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
+const res2 = analogous({r: 40, g: 120, b: 200});
+// => [{r: 40, g: 120, b: 200}, {r: 200, g: 200, b: 40}, {r: 200, g: 40, b: 40}]
+const res3 = analogous({r: 200, g: 34, b: 89});
+// => [{r: 200, g: 34, b: 89}, {r: 34, g: 172, b: 200}, {r: 34, g: 200, b: 62}]
+const res4 = analogous({r: 44, g: 222, b: 111});
+// => [{r: 44, g: 222, b: 111}, {r: 222, g: 44, b: 66}, {r: 200, g: 44, b: 222}]
+```
+
 ## TODO
 ### Conversion
 * HSL(A) to RGBA 
@@ -323,4 +341,3 @@ const res4 = analogous({r: 44, g: 222, b: 111});
 
 ### Harmony Generation
 * Monochromatic
-* Split complementary
